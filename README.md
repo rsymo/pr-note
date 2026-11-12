@@ -1,6 +1,6 @@
 # pr-note
 
-hi
+hi!
 
 A small JavaScript Action that posts **Thanks for the pull request!** in response
 to a human's new comment on a pull request. This repository is the producer
