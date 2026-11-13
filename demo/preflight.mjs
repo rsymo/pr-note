@@ -4,7 +4,7 @@ verifyOrigin();
 let failed = false;
 for (const [label, endpoint, paginate] of [
   ['Authenticated actor', 'user'],
-  ['Resolved release actor', 'users/Steve-Glass'],
+  ['Resolved release actor', 'users/rsymo'],
   ['Repository and permissions', `repos/${REPO}`],
   ['Execution policies INCLUDING parents', `repos/${REPO}/actions/policies?has_parents=true&per_page=100`, true],
   ['Rulesets INCLUDING parents', `repos/${REPO}/rulesets?includes_parents=true&per_page=100`, true],

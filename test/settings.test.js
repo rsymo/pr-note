@@ -9,7 +9,7 @@ const desired = JSON.parse(readFileSync(new URL('../demo/policies/release-only-s
 const copy = value => structuredClone(value);
 const savedPolicy = (enforcement = 'active') => ({
   ...copy(desired), enforcement, id: 31, source_type: 'Repository',
-  source: 'Steve-Glass/pr-note', updated_at: '2026-10-04T00:00:00Z',
+  source: 'rsymo/pr-note', updated_at: '2026-10-04T00:00:00Z',
 });
 
 function fixture(t, policies = []) {
@@ -22,7 +22,7 @@ function fixture(t, policies = []) {
       if (remote.fail) throw new Error('HTTP 403: unavailable');
       if (endpoint.includes('fork-pr-contributor-approval')) remote.approval = copy(options.body);
       else if (options.method === 'POST') {
-        const created = { ...copy(options.body), id: 31, source_type: 'Repository', source: 'Steve-Glass/pr-note' };
+        const created = { ...copy(options.body), id: 31, source_type: 'Repository', source: 'rsymo/pr-note' };
         remote.policies.push(created);
         return copy(created);
       } else if (options.method === 'DELETE') {
@@ -34,8 +34,8 @@ function fixture(t, policies = []) {
       }
       return null;
     }
-    if (endpoint === 'users/Steve-Glass') return { login: 'Steve-Glass', type: 'User', id: 84886334 };
-    if (endpoint === 'repos/Steve-Glass/pr-note') return { full_name: 'Steve-Glass/pr-note', permissions: { admin: true } };
+    if (endpoint === 'users/rsymo') return { login: 'rsymo', type: 'User', id: 5705274 };
+    if (endpoint === 'repos/rsymo/pr-note') return { full_name: 'rsymo/pr-note', permissions: { admin: true } };
     if (endpoint.includes('fork-pr-contributor-approval')) return copy(remote.approval);
     if (endpoint.includes('?has_parents')) {
       assert.equal(options.paginate, true);

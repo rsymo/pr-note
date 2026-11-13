@@ -1,4 +1,4 @@
-export const DEMO_REVISION = 'B';
+export const DEMO_REVISION = 'A';
 export const DEFAULT_BODY = 'Thanks for the pull request!';
 
 export async function run({ core, context, getOctokit }) {

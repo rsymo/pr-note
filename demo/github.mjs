@@ -1,6 +1,6 @@
 import { execFileSync } from 'node:child_process';
 
-export const REPO = 'Steve-Glass/pr-note';
+export const REPO = 'rsymo/pr-note';
 export const API_VERSION = '2026-03-10';
 
 export function gh(args, input) {
@@ -30,8 +30,8 @@ export function git(...args) {
 
 export function verifyOrigin() {
   const origin = git('remote', 'get-url', 'origin');
-  if (!['https://github.com/Steve-Glass/pr-note.git', 'https://github.com/Steve-Glass/pr-note',
-    'git@github.com:Steve-Glass/pr-note.git'].includes(origin)) {
+  if (!['https://github.com/rsymo/pr-note.git', 'https://github.com/rsymo/pr-note',
+    'git@github.com:rsymo/pr-note.git'].includes(origin)) {
     throw new Error(`Unexpected origin: ${origin}`);
   }
 }

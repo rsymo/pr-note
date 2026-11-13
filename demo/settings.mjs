@@ -82,10 +82,10 @@ export async function settings(kind, operation, filename, request = api) {
     renameSync(`${filename}.tmp`, filename);
   };
   try {
-    const user = await request('users/Steve-Glass');
-    if (user.login !== 'Steve-Glass' || user.type !== 'User' ||
+    const user = await request('users/rsymo');
+    if (user.login !== 'rsymo' || user.type !== 'User' ||
         user.id !== policy.rules[0].parameters.allowed_actors[0].id) {
-      throw new Error('Resolved Steve-Glass identity does not match the reviewed policy.');
+      throw new Error('Resolved rsymo identity does not match the reviewed policy.');
     }
     const repo = await request(`repos/${REPO}`);
     if (repo.full_name !== REPO || !repo.permissions?.admin) throw new Error('Repository admin access required.');

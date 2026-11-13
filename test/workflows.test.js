@@ -78,6 +78,6 @@ test('Action metadata matches shared contract and policy targets only the releas
   assert.equal(p.enforcement, 'active');
   assert.deepEqual(p.conditions, { workflow_path: { include: ['.github/workflows/release.yml'], exclude: [] } });
   assert.deepEqual(p.rules, [{ type: 'restrict_actions_actors', parameters: {
-    allowed_actors: [{ id: 84886334, type: 'User' }],
+    allowed_actors: [{ id: 5705274, type: 'User' }],
   } }]);
 });
